@@ -33,8 +33,7 @@ class WaterIntakeAgent:
                     provide a hydration status and suggest if they need to drink more water 
                 '''
         generator=pipeline("text-generation",model="HuggingFaceH4/zephyr-7b-beta")
-        return generator(prompt,max_length=30,num_return_sequences=3)
-
+        return generator(prompt)
 
 
 if __name__ == "__main__":
