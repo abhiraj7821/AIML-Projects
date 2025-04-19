@@ -1,19 +1,15 @@
 #IMPORING NECESSARY LIBRARIES
 import streamlit as st
-import torch
-import faiss
-import os
 from io import BytesIO
 from docx import Document
 from langchain_community.document_loaders import WebBaseLoader
 from PyPDF2 import PdfReader
-from langchain.chains import RetrievalQA
 from langchain.text_splitter import CharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
+
 1
 #CUSTOM CLASS
-from agent import answer_question
+# from hugging_face_transformer_agent_calling import answer_question
+from agent import a121_rag_chain
 from vector_store import create_vector_store
 
 model_name = "HuggingFaceH4/zephyr-7b-beta"
@@ -95,7 +91,7 @@ def main():
     if "vector_store" in st.session_state:
         query = st.text_input("Ask your question")
         if query and st.button("Submit"):
-            answer = answer_question(st.session_state["vector_store"], query)
+            answer = a121_rag_chain(st.session_state["vector_store"], query)
             st.write(answer['result'])  # Display just the answer
             with st.expander("See sources"):
                 for doc in answer['source_documents']:
