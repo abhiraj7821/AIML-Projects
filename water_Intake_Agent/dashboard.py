@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from src.agent import WaterIntakeAgent
+# from src.agent import WaterIntakeAgent
+from src.agent import a121_ai_request
 from src.database import log_intake,get_intake_history
 
 
@@ -20,7 +21,7 @@ if not st.session_state.tracker_started:
     
     if st.button("Start Tracking"):
         st.session_state.tracker_started=True
-        st.experimental_rerun()
+        st.rerun()
 
 else:
     st.title("AI Water Tracker Dashboard")
@@ -34,9 +35,9 @@ else:
         if user_id and intake_ml:
             log_intake(user_id,intake_ml)
             st.success(f"✅ Logged {intake_ml}ml for {user_id}")
-            agent=WaterIntakeAgent()
-            feedback=agent.analyze_intake(intake_ml)
-            st.info(f"🤖 AI Feedback:{feedback}")
+            agent=a121_ai_request()
+            feedback=(agent.analyze_intake(intake_ml)).choices[0].message.content
+            st.info(f"🤖 AI Feedback: \n{feedback}")
 
     #Divider
     st.markdown("---")
@@ -56,6 +57,6 @@ else:
             })
 
             st.dataframe(df)
-            st.line_chart(df,x="Date",y="Water Intake(ml)")
+            st.line_chart(df,x="Date",y="Water Intake (ml)")
         else:
             st.warning("⚠️ No Water intake data found. Please log your intake first.")

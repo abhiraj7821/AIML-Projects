@@ -1,0 +1,246 @@
+2025-04-19 13:41:36,142 - INFO -Started server process [14248]
+2025-04-19 13:41:36,145 - INFO -Waiting for application startup.
+2025-04-19 13:41:36,146 - INFO -Application startup complete.
+2025-04-19 13:41:36,163 - INFO -Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-04-19 13:42:20,150 - INFO -HTTP Request: POST https://api.ai21.com/studio/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-19 13:42:20,161 - INFO -User abhiraj7821 logged 2000ml
+2025-04-19 13:48:37,860 - INFO -HTTP Request: POST https://api.ai21.com/studio/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-19 13:48:37,864 - INFO -User user_123 logged 2000ml
+2025-04-19 13:48:59,945 - ERROR -Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/api.py", line 27, in get_water_history
+    history=get_intake_history(user_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/database.py", line 34, in get_intake_history
+    cursor.execute("SELECT intake_ml, date FROM water_intake WHERE user_id = ?",(user_id))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 8 supplied.
+2025-04-19 13:49:19,975 - ERROR -Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/api.py", line 27, in get_water_history
+    history=get_intake_history(user_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/database.py", line 34, in get_intake_history
+    cursor.execute("SELECT intake_ml, date FROM water_intake WHERE user_id = ?",(user_id))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 11 supplied.
+2025-04-19 16:46:26,084 - INFO -HTTP Request: POST https://api.ai21.com/studio/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-19 16:46:26,090 - INFO -User user_123 logged 2000ml
+2025-04-19 16:47:03,770 - INFO -Shutting down
+2025-04-19 16:47:03,876 - INFO -Waiting for application shutdown.
+2025-04-19 16:47:03,878 - INFO -Application shutdown complete.
+2025-04-19 16:47:03,881 - INFO -Finished server process [14248]
+2025-04-19 16:47:10,845 - INFO -Started server process [16649]
+2025-04-19 16:47:10,850 - INFO -Waiting for application startup.
+2025-04-19 16:47:10,854 - INFO -Application startup complete.
+2025-04-19 16:47:10,864 - INFO -Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-04-19 16:47:41,860 - INFO -HTTP Request: POST https://api.ai21.com/studio/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-19 16:47:41,865 - INFO -User user_123 logged 2000ml
+2025-04-19 16:48:08,076 - INFO -Shutting down
+2025-04-19 16:48:08,180 - INFO -Waiting for application shutdown.
+2025-04-19 16:48:08,182 - INFO -Application shutdown complete.
+2025-04-19 16:48:08,184 - INFO -Finished server process [16649]
+2025-04-19 16:48:12,951 - INFO -Started server process [16797]
+2025-04-19 16:48:12,954 - INFO -Waiting for application startup.
+2025-04-19 16:48:12,966 - INFO -Application startup complete.
+2025-04-19 16:48:12,980 - INFO -Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-04-19 16:48:36,948 - INFO -HTTP Request: POST https://api.ai21.com/studio/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-19 16:48:36,951 - INFO -User user_123 logged 2000ml
+2025-04-19 16:49:16,733 - ERROR -Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/api.py", line 27, in get_water_history
+    history=get_intake_history(user_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/database.py", line 34, in get_intake_history
+    cursor.execute("SELECT intake_ml, date FROM water_intake WHERE user_id = ?",(user_id))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 8 supplied.
+2025-04-19 16:50:21,141 - INFO -Shutting down
+2025-04-19 16:50:21,244 - INFO -Waiting for application shutdown.
+2025-04-19 16:50:21,245 - INFO -Application shutdown complete.
+2025-04-19 16:50:21,246 - INFO -Finished server process [16797]
+2025-04-19 16:52:52,268 - INFO -Started server process [16985]
+2025-04-19 16:52:52,270 - INFO -Waiting for application startup.
+2025-04-19 16:52:52,271 - INFO -Application startup complete.
+2025-04-19 16:52:52,283 - INFO -Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-04-19 16:53:09,460 - ERROR -Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/api.py", line 27, in get_water_history
+    history=get_intake_history(user_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhishekrajput/Desktop/AIML-Projects/water_Intake_Agent/src/database.py", line 34, in get_intake_history
+    cursor.execute("SELECT intake_ml, date FROM water_intake WHERE user_id = ?",(user_id))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 8 supplied.
+2025-04-19 16:54:04,843 - INFO -Shutting down
+2025-04-19 16:54:04,946 - INFO -Waiting for application shutdown.
+2025-04-19 16:54:04,950 - INFO -Application shutdown complete.
+2025-04-19 16:54:04,951 - INFO -Finished server process [16985]
+2025-04-19 16:54:11,011 - INFO -Started server process [17112]
+2025-04-19 16:54:11,014 - INFO -Waiting for application startup.
+2025-04-19 16:54:11,015 - INFO -Application startup complete.
+2025-04-19 16:54:11,028 - INFO -Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-04-19 16:57:20,410 - INFO -Shutting down
+2025-04-19 16:57:20,514 - INFO -Waiting for application shutdown.
+2025-04-19 16:57:20,516 - INFO -Application shutdown complete.
+2025-04-19 16:57:20,518 - INFO -Finished server process [17112]
