@@ -11,7 +11,7 @@ from langchain.chains import RetrievalQA
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
-1
+
 #CUSTOM CLASS
 from agent import a121_rag_chain
 from vector_store import create_vector_store
