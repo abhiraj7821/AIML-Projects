@@ -1,7 +1,5 @@
 #IMPORING NECESSARY LIBRARIES
 import streamlit as st
-import torch
-import faiss
 import os
 from io import BytesIO
 from docx import Document
