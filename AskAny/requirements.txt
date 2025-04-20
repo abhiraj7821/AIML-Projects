@@ -1,0 +1,12 @@
+streamlit
+python-docx
+langchain
+langchain_community
+PyPDF2
+python-dotenv
+torch
+faiss-cpu
+numpy
+nltk
+sentence-transformers
+watchdog
