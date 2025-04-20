@@ -6,7 +6,7 @@ import faiss
 from langchain_community.docstore.in_memory import InMemoryDocstore
 import numpy as np
 # from agent import answer_question
-from agent import a121_rag_chain
+# from agent import a121_rag_chain
 
 import warnings
 # Displaying a warning message

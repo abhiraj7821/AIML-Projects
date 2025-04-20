@@ -11,8 +11,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
 #CUSTOM CLASS
-from agent import a121_rag_chain
-from vector_store import create_vector_store
+from src.agent import a121_rag_chain
+from src.vector_store import create_vector_store
 
 model_name = "HuggingFaceH4/zephyr-7b-beta"
 
