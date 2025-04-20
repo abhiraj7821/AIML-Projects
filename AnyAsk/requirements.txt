@@ -1,15 +1,12 @@
 streamlit
 python-docx
+langchain
 langchain_community
 PyPDF2
-langchain
-langchain_ai21
-dotenv
+python-dotenv
 torch
 faiss-cpu
 numpy
 nltk
 sentence-transformers
 watchdog
-torch   
-docx
