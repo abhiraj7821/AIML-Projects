@@ -6,7 +6,6 @@ from langchain_community.document_loaders import WebBaseLoader
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
 
-1
 #CUSTOM CLASS
 # from hugging_face_transformer_agent_calling import answer_question
 from agent import a121_rag_chain
