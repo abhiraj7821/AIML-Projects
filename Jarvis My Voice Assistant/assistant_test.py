@@ -22,7 +22,6 @@ sys_msg = (
 "Use all of the context of this conversation so your response is relevant to the conversation. Make"
 "your responses clear and concise, avoiding any verbosity."
 )
-
 convo=[{'role':'system','content':sys_msg}]
 
 #GENAI_IMPLIMENTATION
@@ -102,7 +101,6 @@ def web_cam_capture():
         cv2.imwrite(path, frame)
     else:
         print("Error: Could not capture frame from camera.")
-
 
 #Function for clipboard
 def get_clipboard_text():
