@@ -1,20 +1,16 @@
 #IMPORING NECESSARY LIBRARIES
 import streamlit as st
-import torch
-import faiss
-import os
 from io import BytesIO
 from docx import Document
 from langchain_community.document_loaders import WebBaseLoader
 from PyPDF2 import PdfReader
-from langchain.chains import RetrievalQA
 from langchain.text_splitter import CharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
 
 #CUSTOM CLASS
+# from hugging_face_transformer_agent_calling import answer_question
 from agent import a121_rag_chain
-from vector_store import create_vector_store
+# from vector_store import create_vector_store
+from vector_store_using_huggingface import create_vector_store
 
 model_name = "HuggingFaceH4/zephyr-7b-beta"
 
