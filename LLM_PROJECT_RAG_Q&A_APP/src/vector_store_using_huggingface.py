@@ -5,7 +5,7 @@ import faiss
 from langchain_community.vectorstores import FAISS
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain.text_splitter import CharacterTextSplitter
-from agent import a121_rag_chain
+
 
 load_dotenv()
 HUGGINGFACE_TOKEN=os.getenv("HUGGINGFACE_API_KEY")
