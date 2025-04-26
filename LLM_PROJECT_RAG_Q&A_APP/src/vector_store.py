@@ -5,7 +5,8 @@ import torch
 import faiss
 from langchain_community.docstore.in_memory import InMemoryDocstore
 import numpy as np
-from agent import answer_question
+# from agent import answer_question
+from agent import a121_rag_chain
 
 import warnings
 # Displaying a warning message
@@ -56,4 +57,4 @@ def create_vector_store(texts):
 # texts = text_splitter.split_text(documents)
 # vector_store=create_vector_store(texts)
 
-# answer_question(vector_store,"What is Nvidia result for 2025?")
+# a121_rag_chain(vector_store,"What is Nvidia result for 2025?")

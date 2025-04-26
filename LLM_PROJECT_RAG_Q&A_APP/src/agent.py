@@ -1,45 +1,22 @@
-import torch
-from langchain_community.docstore.in_memory import InMemoryDocstore
-from langchain_huggingface import HuggingFaceEndpoint
-import numpy as np
-from langchain.llms import HuggingFacePipeline
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-from transformers import AutoModelForSeq2SeqLM 
 from langchain.chains import RetrievalQA
+from langchain_ai21.chat_models import ChatAI21
+from dotenv import load_dotenv
+import os
+from getpass import getpass
 
-
-
-
-def answer_question(vector_store,query):
-    
-    MODEL_NAME = "google/flan-t5-large"  # Even smaller alternative
-
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    model = AutoModelForSeq2SeqLM.from_pretrained(  # Changed class
-        MODEL_NAME,
-        device_map="auto",
-        torch_dtype=torch.float16
-    )
-    print("MODEL CREATED")
-    
-    pipe = pipeline(
-        "text2text-generation",  
-        model=model,
-        tokenizer=tokenizer,
-        max_length=200,
-        do_sample=True,
-        temperature=0.3
-    )
-
-    hf_pipeline = HuggingFacePipeline(pipeline=pipe)
-    print("PIPELINE DEFINED")
-
+load_dotenv()
+def a121_rag_chain(vector_store,query):
+    # A121_API_KEY=os.getenv("A121_API_KEY")
+    if "AI21_API_KEY" not in os.environ:
+        os.environ["AI21_API_KEY"] = getpass()
+    llm = ChatAI21(model="jamba-instruct", temperature=0)
     qa = RetrievalQA.from_chain_type(
-    llm=hf_pipeline,
-    chain_type="stuff",
-    retriever=vector_store.as_retriever(search_kwargs={"k": 3}),
-    return_source_documents=True
-)
+        llm=llm,
+        chain_type="stuff",
+        retriever=vector_store.as_retriever(search_kwargs={"k": 3}),
+        return_source_documents=True
+    )
     print("RETRIEVAL DEFINED")
     result = qa.invoke({"query": query})
+    print(f"Answer: {result['result']}")
     return result
