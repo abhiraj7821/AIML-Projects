@@ -11,3 +11,4 @@ faiss-cpu
 python-docx
 bitsandbytes 
 accelerate
+langchain-ai21
