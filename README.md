@@ -2,7 +2,7 @@
 
 A curated collection of **AI and Machine Learning projects** covering real-world applications in **data science**, **deep learning**, **NLP**, **healthcare**, and **finance** — all built using cutting-edge Python libraries and frameworks like **TensorFlow**, **PyTorch**, **Scikit-learn**, and more.
 
-![Repository Screenshot](./repo-screenshot.png) <!-- Add actual screenshot file -->
+![Repository Screenshot](./LLM_PROJECT_RAG_Q&A_APP/src/1.webp) <!-- Add actual screenshot file -->
 
 ---
 
@@ -64,6 +64,15 @@ AIML-Projects/
 └── ...
 
 ---
+
+## 📸 Screenshots
+Project previews:
+
+![Repository Screenshot](./LLM_PROJECT_RAG_Q&A_APP/src/1.webp)
+
+![Repository Screenshot](./Jarvis%20My%20Voice%20Assistant/2.webp)
+
+![Repository Screenshot](./water_Intake_Agent/src/1%20(1).webp)
 
 ## 🚀 Getting Started
 
